@@ -1,0 +1,13 @@
+<suite name="KyroTestSuite">
+    <test name="NotificationExperienceTests">
+        <classes>
+            <class name="web_app_tests.KyroTestCaseClass">
+                <methods>
+                    <include name="userCreateProjectAndAssignToProjectManager" />
+                    <include name="logInAsProjectManagerAndVerifyNotifications" />
+                    <include name="verifyProjectNotificationNavigation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
