@@ -17,3 +17,24 @@ Expectations:
 1. Write the list of scenarios to test the experience end to end.
 2. Prioritize 3 test cases and automate using the tool of your choice.
 3. Check-in the final version of the code in GitHub.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test scenario - 
+Test Case 1: User1 - Create and Assign Project
+1.	Sign in as User1.
+2.	Create a new project.
+3.	Assign the project to User2.
+4.	Log out.
+
+Test Case 2: User2 - Validate Notification
+1.	Sign in as User2.
+2.	Check for the notification regarding the assigned project.
+3.	Log out.
+   
+Test Case 3: User2 - Validate Project Details
+1.	Sign in as User2.
+2.	Click on the notification to view project details.
+3.	Validate the project details.
+4.	Log out.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
