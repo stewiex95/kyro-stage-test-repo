@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.TestUtilities;
 
 import java.time.Duration;
+
 /**
  * Author - Harish, Purpose - Class contains objects and methods for the sticky header which has the welcome message, notification bell, create button and profile options
  */
@@ -24,6 +25,7 @@ public class StickyHeader {
     String bellNotificationIconXpath = commonHeaderXpath + "//span[@aria-controls='customized-menu']";
 
     String profileIconXpath = commonHeaderXpath + "//div[contains(@class,'MuiAvatar')]";
+
     public WebElement profileIcon() {
         return driver.findElement(By.xpath(profileIconXpath));
     }
@@ -44,20 +46,14 @@ public class StickyHeader {
         return driver.findElement(By.xpath(bellNotificationIconXpath));
     }
 
-    public WebElement notificationsOnTheBellIcon() {
-        return driver.findElement(By.xpath(bellNotificationIconXpath + "//span[contains(@class,'MuiBadge-badge')]"));
-    }
-
     public String getUserNameFromWelcomeHeader() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.visibilityOf(stickyHeader()));
         return userNameInWelcomeHeader().getText().trim();
     }
 
-    public String getNumberOfNotificationsForUserFromBellIcon() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOf(bellNotification()));
-        return notificationsOnTheBellIcon().getText().trim();
+    public void waitUntilNotificationsCountIsUpdated(String expectedCount) {
+        TestUtilities.fluentlyWaitForElementToAppear(driver, By.xpath(bellNotificationIconXpath + "//span[contains(@class,'MuiBadge-badge')][normalize-space()='" + expectedCount + "']"));
     }
 
     public void logoutOfApp() {

@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [KyroTestSuite]">
+  <listeners>
+    <listener class-name="utils.TestngListenerClass"/>
+  </listeners>
   <test thread-count="5" name="NotificationExperienceTests(failed)">
     <classes>
       <class name="web_app_tests.KyroTestCaseClass">
         <methods>
           <include name="initializeDriverAndFetchUrl"/>
+          <include name="verifyProjectNotificationNavigation"/>
           <include name="generateExtentReports"/>
+          <include name="userCreateProjectAndAssignToProjectManager" invocation-numbers="0"/>
           <include name="setUpExtentHtmlReporter"/>
           <include name="tearDown"/>
           <include name="setUpDriver"/>
-          <include name="logInAsProjectManagerAndVerifyNotifications" invocation-numbers="0"/>
+          <include name="logInAsProjectManagerAndVerifyNotifications"/>
         </methods>
       </class> <!-- web_app_tests.KyroTestCaseClass -->
     </classes>

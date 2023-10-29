@@ -1,4 +1,7 @@
 <suite name="KyroTestSuite">
+    <listeners>
+        <listener class-name="utils.TestngListenerClass"/>
+    </listeners>
     <test name="NotificationExperienceTests">
         <classes>
             <class name="web_app_tests.KyroTestCaseClass">
